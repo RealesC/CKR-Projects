@@ -1,0 +1,112 @@
+import javax.swing.*;
+import java.io.*;
+import java.text.NumberFormat;
+import java.util.Random;
+
+/** ***************************************************
+ *  Name:           Caleb R.
+ *  Class:          CS30S
+ * 
+ *  Assignment:     Assignment 1.5 Frequency Part 1
+ * 
+ *  Description:    Get 1000 random numbers between 1-50
+ * 
+ *************************************************************/
+
+public class Frequency_Assignement_Part1 {
+
+    public static void main(String[] args) throws IOException{
+    // ***** constants *******
+    
+    // ***** variables *****
+    
+        String banner = "";             // output banner
+        String prompt = "";             // prompt for user input
+        
+        String strin = "";              // string fro keyboard input
+        String strout = "";             // string for formatted output
+        
+        String delim = "[ ]+";          // delimiter for splitting input records
+        String[] tokens = null;         // used to split input records
+        
+        // a new line character that works on every computer system
+        String nl = System.lineSeparator();
+        
+        int n = 0;                      //variable for random number
+        
+        int count = 0;                  //counts how many times the while loop repeats
+    // ***** objects *****
+    
+        Random random = new Random();
+    
+        //Scanner scanner = new Scanner(System.in);
+        //NumberFormat currency = NumberFormat.getCurrencyInstance();
+        
+        // file io buffers for reading and writing to text files
+        
+        //BufferedReader fin = new BufferedReader(new FileReader("filename.txt"));
+        BufferedWriter fout = new BufferedWriter(new FileWriter("ThousandNumbers.txt"));
+        
+        //To write file containing the thousand numbers for part 2
+        try{
+    // ***** print banners *****
+    
+        banner = "*****************************" + nl;
+        banner += "Name:        Caleb R." + nl;
+        banner += "Class:       CS30S" + nl;
+        banner += "Assignment:  Assignment 1.5 Frequency" + nl;
+        banner += "*****************************" + nl + nl;
+        
+        System.out.println(banner);
+        //fout.print(banner);
+    
+    // ***** Get Input *****
+    
+        // prompt for input
+        // read input from keyboard
+        // echo input back to console window
+    
+    // ***** Main Processing *****
+    
+        n = random.nextInt(50);
+        
+        while(count != 1000){
+            
+            
+            System.out.println(n);
+            
+            //Input the number into the file
+            fout.write(n + nl);
+            
+            
+            count++;
+            n = random.nextInt(50);
+            
+        }//end while
+        
+        //closes file to not make the file page blank
+        fout.close();
+        
+    }//end of try
+    //to catch any IO exceptions
+    catch (IOException e){
+        
+        e.printStackTrace();
+        
+    }//end catch
+    
+    // ***** Print Formatted Output *****
+    
+    // ***** Closing Message *****
+    
+        System.out.println();
+        System.out.println("end of processing");
+        //fout.println("End of Processing");
+        
+    // **** close io buffers *****
+    
+        //fin.close();
+        //fout.close();
+    } // end main 
+    
+} // end FormatTemplate
