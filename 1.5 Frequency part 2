@@ -1,0 +1,378 @@
+import java.util.Scanner;
+import javax.swing.*;
+import java.io.*;
+import java.text.NumberFormat;
+
+/** ***************************************************
+ *  Name:           Caleb R.
+ *  Class:          CS30S
+ * 
+ *  Assignment:     Assignment 1.5 Frequency Part 2
+ * 
+ *  Description:    Calculate and displays frequency
+ * 
+ *************************************************************/
+
+public class Frequency_Assignment_Part2 {
+
+    public static void main(String[] args) throws IOException{
+    // ***** constants *******
+    
+        final int THOUSAND = 1000;
+    
+    // ***** variables *****
+    
+        //String banner = "";           // output banner
+        String prompt = "";             // prompt for user input
+        
+        String strin = "";              // string fro keyboard input
+        String strout = "";             // string for formatted output
+        
+        String delim = "[ ]+";          // delimiter for splitting input records
+        String[] tokens = null;         // used to split input records
+        
+        // a new line character that works on every computer system
+        String nl = System.lineSeparator();
+        
+        int[] list = new int[1000];     //Variable to store all the numbers
+        
+        int n = 0;                     //to parse strin
+        
+        int number = 0;                 //to take number from list
+        
+        int count = 0;                 //For each number in the list
+        
+        //1-10
+        int a1 = 0;    
+        int b1 = 0;
+        int c1 = 0;
+        int d1 = 0;
+        int e1 = 0;
+        int f1 = 0;
+        int g1 = 0; 
+        int h1 = 0;
+        int i1 = 0;
+        int j1 = 0;
+        
+        //11-20
+        int a2 = 0;    
+        int b2 = 0;
+        int c2 = 0;
+        int d2 = 0;
+        int e2 = 0;
+        int f2 = 0;
+        int g2 = 0;
+        int h2 = 0;
+        int i2 = 0;
+        int j2 = 0;
+        
+        //21-30
+        int a3 = 0;    
+        int b3 = 0;
+        int c3 = 0;
+        int d3 = 0;
+        int e3 = 0;
+        int f3 = 0;
+        int g3 = 0; 
+        int h3 = 0;
+        int i3 = 0;
+        int j3 = 0;
+        
+        //31-40
+        int a4 = 0;    
+        int b4 = 0;
+        int c4 = 0;
+        int d4 = 0;
+        int e4 = 0;
+        int f4 = 0;
+        int g4 = 0; 
+        int h4 = 0;
+        int i4 = 0;
+        int j4 = 0;
+        
+        //41-50
+        int a5 = 0;    
+        int b5 = 0;
+        int c5 = 0;
+        int d5 = 0;
+        int e5 = 0;
+        int f5 = 0;
+        int g5 = 0; 
+        int h5 = 0;
+        int i5 = 0;
+        int j5 = 0;
+    // ***** objects *****
+    
+        //Scanner scanner = new Scanner(System.in);
+        //NumberFormat currency = NumberFormat.getCurrencyInstance();
+        
+        // file io buffers for reading and writing to text files
+        
+        BufferedReader fin = new BufferedReader(new FileReader("ThousandNumbers.txt"));
+        //PrintWriter fout = new PrintWriter(new BufferedWriter(new FileWriter("outfle.txt")));
+    
+    // ***** print banners *****
+    
+    
+        System.out.println(getBanner(nl));
+        //fout.print(banner);
+    
+    // ***** Get Input *****
+    
+    // ***** Main Processing *****
+    
+    //prime the EOF loop
+    strin = fin.readLine();
+    System.out.println(strin);
+    
+    while(strin != null){
+        
+        //System.out.println(strin)
+        
+        //parse input
+        number = Integer.parseInt(strin);
+        
+        if(number == 1){
+            a1 += 1;
+        }//end if
+        else if(number == 2){
+            b1 += 1;
+        }//else if
+        else if(number == 3){
+            c1 += 1;
+        }//else if
+        else if(number == 4){
+            d1 += 1;
+        }//else if
+        else if(number == 5){
+            e1 += 1;
+        }//else if
+        else if(number == 6){
+            f1 += 1;
+        }//else if
+        else if(number == 7){
+            g1 += 1;
+        }//else if
+        else if(number == 8){
+            h1 += 1;
+        }//else if
+        else if(number == 9){
+            i1 += 1;
+        }//else if
+        else if(number == 10){
+            j1 += 1;
+        }//else if
+        else if(number == 11){
+            a2 += 1;
+        }//else if
+        else if(number == 12){
+            b2 += 1;
+        }//else if
+        else if(number == 13){
+            c2 += 1;
+        }//else if
+        else if(number == 14){
+            d2 += 1;
+        }//else if
+        else if(number == 15){
+            e2 += 1;
+        }//else if
+        else if(number == 16){
+            f2 += 1;
+        }//else if
+        else if(number == 17){
+            g2 += 1;
+        }//else if
+        else if(number == 18){
+            h2 += 1;
+        }//else if
+        else if(number == 19){
+            i2 += 1;
+        }//else if
+        else if(number == 20){
+            j2 += 1;
+        }//else if
+        else if(number == 21){
+            a3 += 1;
+        }//else if
+        else if(number == 22){
+            b3 += 1;
+        }//else if
+        else if(number == 23){
+            c3 += 1;
+        }//else if
+        else if(number == 24){
+            d3 += 1;
+        }//else if
+        else if(number == 25){
+            e3 += 1;
+        }//else if
+        else if(number == 26){
+            f3 += 1;
+        }//else if
+        else if(number == 27){
+            g3 += 1;
+        }//else if
+        else if(number == 28){
+            h3 += 1;
+        }//else if
+        else if(number == 29){
+            i3 += 1;
+        }//else if
+        else if(number == 30){
+            j3 += 1;
+        }//else if
+        else if(number == 31){
+            a4 += 1;
+        }//else if
+        else if(number == 32){
+            b4 += 1;
+        }//else if
+        else if(number == 33){
+            c4 += 1;
+        }//else if
+        else if(number == 34){
+            d4 += 1;
+        }//else if
+        else if(number == 35){
+            e4 += 1;
+        }//else if
+        else if(number == 36){
+            f4 += 1;
+        }//else if
+        else if(number == 37){
+            g4 += 1;
+        }//else if
+        else if(number == 38){
+            h4 += 1;
+        }//else if
+        else if(number == 39){
+            i4 += 1;
+        }//else if
+        else if(number == 40){
+            j4 += 1;
+        }//else if
+        else if(number == 41){
+            a5 += 1;
+        }//else if
+        else if(number == 42){
+            b5 += 1;
+        }//else if
+        else if(number == 43){
+            c5 += 1;
+        }//else if
+        else if(number == 44){
+            d5 += 1;
+        }//else if
+        else if(number == 45){
+            e5 += 1;
+        }//else if
+        else if(number == 46){
+            f5 += 1;
+        }//else if
+        else if(number == 47){
+            g5 += 1;
+        }//else if
+        else if(number == 48){
+            h5 += 1;
+        }//else if
+        else if(number == 49){
+            i5 += 1;
+        }//else if
+        else if(number == 50){
+            j5 += 1;
+        }//else if
+    
+        
+        //update loop
+        strin = fin.readLine();
+    }//end EOF loop
+    
+    // ***** Print Formatted Output *****
+    //how it will be displayed
+    System.out.println("Number | Frequency" + nl);
+    
+    System.out.println("1 | " + a1);
+    System.out.println("2 | " + b1);
+    System.out.println("3 | " + c1);
+    System.out.println("4 | " + d1);
+    System.out.println("5 | " + e1);
+    System.out.println("6 | " + f1);
+    System.out.println("7 | " + g1);
+    System.out.println("8 | " + h1);
+    System.out.println("9 | " + i1);
+    System.out.println("10 | " + j1);
+    System.out.println("11 | " + a2);
+    System.out.println("12 | " + b2);
+    System.out.println("13 | " + c2);
+    System.out.println("14 | " + d2);
+    System.out.println("15 | " + e2);
+    System.out.println("16 | " + f2);
+    System.out.println("17 | " + g2);
+    System.out.println("18 | " + h2);
+    System.out.println("19 | " + i2);
+    System.out.println("20 | " + j2);
+    System.out.println("21 | " + a3);
+    System.out.println("22 | " + b3);
+    System.out.println("23 | " + c3);
+    System.out.println("24 | " + d3);
+    System.out.println("25 | " + e3);
+    System.out.println("26 | " + f3);
+    System.out.println("27 | " + g3);
+    System.out.println("28 | " + h3);
+    System.out.println("29 | " + i3);
+    System.out.println("30 | " + j3);
+    System.out.println("31 | " + a4);
+    System.out.println("32 | " + b4);
+    System.out.println("33 | " + c4);
+    System.out.println("34 | " + d4);
+    System.out.println("35 | " + e4);
+    System.out.println("36 | " + f4);
+    System.out.println("37 | " + g4);
+    System.out.println("38 | " + h4);
+    System.out.println("39 | " + i4);
+    System.out.println("40 | " + j4);
+    System.out.println("41 | " + a5);
+    System.out.println("42 | " + b5);
+    System.out.println("43 | " + c5);
+    System.out.println("44 | " + d5);
+    System.out.println("45 | " + e5);
+    System.out.println("46 | " + f5);
+    System.out.println("47 | " + g5);
+    System.out.println("48 | " + h5);
+    System.out.println("49 | " + i5);
+    System.out.println("50 | " + j5);
+    
+    
+    // ***** Closing Message *****
+    
+        printClosingMessage();
+        //fout.println("End of Processing");
+        
+    // **** close io buffers *****
+    
+        //fin.close();
+        //fout.close();
+    } // end main 
+    
+    // **** user defined methods ****
+    
+    public static String getBanner(String nl){
+        String banner = "";   // banner to be returned to calling function 
+        
+        banner = "*****************************" + nl;
+        banner += "Name:        Caleb R." + nl;
+        banner += "Class:       CS30S" + nl;
+        banner += "Assignment:  1.5 Frequency Part 2" + nl;
+        banner += "*****************************" + nl + nl;
+        
+        return banner;
+    }//end banner
+    
+    public static void printClosingMessage(){
+        System.out.println();
+        System.out.println("end of processing");
+    }// end print closing message
+    
+    
+} // end FormatTemplate
