@@ -1,0 +1,35 @@
+/********************************************************************
+ * Programmer:    Caleb R
+ * Class:  CS30S
+ *
+ * Assignment: A2 Employee Payroll
+ *
+ * Description: Call methods
+ ***********************************************************************/
+
+// import libraries as needed here
+
+public class EP_Methods {
+    //*** Class Variables ***
+    
+    //*** Instance Variables ***
+    
+    //*** Constructors ***
+    
+    /*****************************************
+    * Description: brief description of the methods purpose
+    * 
+    * Interface:
+    * 
+    * @param        each parameter of the method should be listed with an @param
+    * @param        parametername description of parameter
+    * 
+    * @return       any return value will be noted here
+    * ****************************************/
+    
+    
+    //*** Getters ***
+    
+    //*** Setters ***
+    
+} // end of public class
