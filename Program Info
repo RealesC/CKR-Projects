@@ -1,0 +1,57 @@
+/********************************************************************
+ * Programmer:    Caleb R
+ * Class:  CS30S
+ *
+ * Assignment:  pInfo
+*
+ * Description: call methods for intro and closing banner
+ ***********************************************************************/
+
+// import libraries as needed here
+
+public class ProgramInfo {
+    //*** Class Variables ***
+    
+    //*** Instance Variables ***
+    
+    //*** Constructors ***
+    
+    /*****************************************
+    * Description: Intro Banner
+    * 
+    * Interface:
+    * 
+    * @return       
+    * ****************************************/
+    public static String getBanner(String nl){
+        String banner = "";   // banner to be returned to calling function 
+        
+        banner = "*****************************" + nl;
+        banner += "Name:        Caleb R." + nl;
+        banner += "Class:       CS30S" + nl;
+        banner += "Assignment:  A2 Employee Payroll" + nl;
+        banner += "*****************************" + nl + nl;
+        
+        return banner;
+    }//end banner
+    /*****************************************
+    * Description: Closing statement
+    * 
+    * Interface:
+    * 
+    * @return       
+    * ****************************************/
+    public static String getClosingMessage(){
+        System.out.println();
+        String st = "";
+        
+        st = "end of processing";
+        
+        return st;
+    }// end print closing message
+    
+    //*** Getters ***
+    
+    //*** Setters ***
+    
+} // end of public class
