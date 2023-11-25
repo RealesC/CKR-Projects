@@ -15,6 +15,7 @@ public class EP_Methods {
     // a new line character that works on every computer system
     final static String nl = System.lineSeparator();
     private final int MAXHOURS = 40;
+    private final double OTRATE = 1.5;
     private static int nextID = 1000;
     
     //*** Instance Variables ***
@@ -42,13 +43,12 @@ public class EP_Methods {
     }// end param constructor
     
     
-    //gives each character a unique id
-    private int getNextID(){
-        return nextID++;
-    }//end get unique id
-    
-    
     //*** Getters ***
+    
+    //gets id
+    public int getID(){
+        return this.id;
+    }//end get id
     
     /*****************************************
     * Description: get the name
@@ -106,4 +106,101 @@ public class EP_Methods {
     public void setWage(double w){
         this.wage = w;
     }//end set wage
-} // end of public class
+    
+    //utility methods
+    
+    //gives each character a unique id
+    private int getNextID(){
+        return nextID++;
+    }//end get unique id
+    
+    //get regular pay
+    /*****************************************
+     * Description: returns regular pay
+     * 
+     * Interface:
+     * 
+     * @param        regular pay: double
+     * ****************************************/
+     public double regPay(){
+         
+         double regPay = 0.0;
+         
+         if(this.hours > MAXHOURS){
+             regPay = MAXHOURS * this.wage;
+         }//end if
+         else{
+             regPay = this.hours * this.wage;
+         }//end else
+         
+         return regPay;
+     }//end regular pay
+     
+     
+    //get Overtime pay
+    /*****************************************
+     * Description: returns overtime pay
+     * 
+     * Interface:
+     * 
+     * @param        OT pay: double
+     * ****************************************/
+     public double otPay(){
+         
+         double otPay = 0.0;
+         
+         if(this.hours > MAXHOURS){
+             otPay = (this.hours - MAXHOURS) * (this.wage * OTRATE);
+         }//end if
+         else{
+             otPay = this.hours * this.wage;
+         }//end else
+         
+         return otPay;
+     }//end regular pay
+     
+     
+    //get gross pay
+    /*****************************************
+     * Description: returns Gross pay
+     * 
+     * Interface:
+     * 
+     * @param        Gross pay: double
+     * ****************************************/
+     public double grossPay(){
+         
+         double grossPay = 0.0;
+         
+         grossPay = this.regPay() + this.otPay();
+         
+         return grossPay;
+     }//end regular pay
+     
+    //override methods
+    // *** Override methods ***
+    boolean equals(EP_Methods e){
+         boolean equal;
+         
+         equal = this.wage == e.getWage();
+         //equal = this.getRadius(); == oc.getRadius();
+         //equal = this.radius == oc.radius;
+         
+         return equal;
+     }//end equals
+     
+    @Override
+    public String toString(){
+         String st;
+         st = "Employee: " + this.name + nl;
+         st += "ID: " + this.getID() + nl;
+         st += "Hours: " + this.hours + nl;
+         st += "Wage: " + this.wage + nl;
+         st += "Regular Pay: " + this.regPay() + nl;
+         st += "OT Pay: " + this.otPay() + nl;
+         st += "Gross Pay: " + this.grossPay();
+         
+         return st;
+    }// end toString
+     
+    } // end of public class
