@@ -12,24 +12,98 @@
 public class EP_Methods {
     //*** Class Variables ***
     
+    // a new line character that works on every computer system
+    final static String nl = System.lineSeparator();
+    private final int MAXHOURS = 40;
+    private static int nextID = 1000;
+    
     //*** Instance Variables ***
+    
+    private String name;
+    private int hours;
+    private double wage;
+    private int id;
     
     //*** Constructors ***
     
-    /*****************************************
-    * Description: brief description of the methods purpose
-    * 
-    * Interface:
-    * 
-    * @param        each parameter of the method should be listed with an @param
-    * @param        parametername description of parameter
-    * 
-    * @return       any return value will be noted here
-    * ****************************************/
+    public EP_Methods(){
+        this.name = "";
+        this.hours = 0;
+        this.wage = 0.0;
+        id = getNextID();
+        
+    }// end no-arg
+    
+    public EP_Methods(String name, int hours, double wage){
+        this.name = name;
+        this.hours = hours;
+        this.wage = wage;
+        id = getNextID();
+    }// end param constructor
+    
+    
+    //gives each character a unique id
+    private int getNextID(){
+        return nextID++;
+    }//end get unique id
     
     
     //*** Getters ***
     
+    /*****************************************
+    * Description: get the name
+    * 
+    * Interface:
+    * 
+    * @return       String: name
+    * ****************************************/
+    public String getName(){
+        return this.name;
+    }//end get name
+    
+    /*****************************************
+    * Description: get the hours
+    * 
+    * Interface:
+    * 
+    * @return       Int: hours
+    * ****************************************/
+    public int getHours(){
+        return this.hours;
+    }//end get hours
+    
+    /*****************************************
+    * Description: get the wage
+    * 
+    * Interface:
+    * 
+    * @return       double: wage
+    * ****************************************/
+    public double getWage(){
+        return this.wage;
+    }//end get wage
+    
     //*** Setters ***
     
+    /*****************************************
+    * Description: set the hours
+    * 
+    * Interface:
+    * 
+    * @param        hours: int
+    * ****************************************/
+    public void setHours(int h){
+        this.hours = h;
+    }//end set hours
+    
+    /*****************************************
+    * Description: set the wage
+    * 
+    * Interface:
+    * 
+    * @return       wage: double
+    * ****************************************/
+    public void setWage(double w){
+        this.wage = w;
+    }//end set wage
 } // end of public class
