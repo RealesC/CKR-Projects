@@ -45,14 +45,13 @@ public class A2_Employee_Payroll{
         
         ProgramInfo pInfo = new ProgramInfo();
         
-        EP_Methods Employee1 = new EP_Methods();
-        EP_Methods Employee2 = new EP_Methods();
-        EP_Methods Employee3 = new EP_Methods();
-        EP_Methods Employee4 = new EP_Methods();
+        EP_Methods Employee1 = new EP_Methods("John", 32, 15.6);
+        EP_Methods Employee2 = new EP_Methods("Carl", 28, 18.9);
+        EP_Methods Employee3 = new EP_Methods("Jada", 45, 15.6);
+        EP_Methods Employee4 = new EP_Methods("Rebecca", 38, 21.5);
+        EP_Methods Employee5 = new EP_Methods();
     
     // ***** print banners *****
-    
-        
         
         System.out.println(pInfo.getBanner(nl));
         //fout.print(banner);
@@ -64,6 +63,8 @@ public class A2_Employee_Payroll{
         // echo input back to console window
     
     // ***** Main Processing *****
+    
+    
     
     // ***** Print Formatted Output *****
     
@@ -77,7 +78,4 @@ public class A2_Employee_Payroll{
         //fin.close();
         //fout.close();
     } // end main 
-    
-    // **** user defined methods ****
-    
 } // end FormatTemplate
