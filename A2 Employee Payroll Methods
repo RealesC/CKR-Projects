@@ -1,3 +1,4 @@
+import java.text.NumberFormat;
 /********************************************************************
  * Programmer:    Caleb R
  * Class:  CS30S
@@ -17,6 +18,9 @@ public class EP_Methods {
     private final int MAXHOURS = 40;
     private final double OTRATE = 1.5;
     private static int nextID = 1000;
+    
+    //for currency on output
+    NumberFormat currency = NumberFormat.getCurrencyInstance();
     
     //*** Instance Variables ***
     
@@ -86,6 +90,17 @@ public class EP_Methods {
     //*** Setters ***
     
     /*****************************************
+    * Description: set the name
+    * 
+    * Interface:
+    * 
+    * @param        name: String
+    * ****************************************/
+    public void setName(String n){
+        this.name = n;
+    }//end set name
+    
+    /*****************************************
     * Description: set the hours
     * 
     * Interface:
@@ -153,7 +168,7 @@ public class EP_Methods {
              otPay = (this.hours - MAXHOURS) * (this.wage * OTRATE);
          }//end if
          else{
-             otPay = this.hours * this.wage;
+             otPay = 0;
          }//end else
          
          return otPay;
@@ -179,7 +194,7 @@ public class EP_Methods {
      
     //override methods
     // *** Override methods ***
-    boolean equals(EP_Methods e){
+    boolean equal(EP_Methods e){
          boolean equal;
          
          equal = this.wage == e.getWage();
@@ -195,10 +210,10 @@ public class EP_Methods {
          st = "Employee: " + this.name + nl;
          st += "ID: " + this.getID() + nl;
          st += "Hours: " + this.hours + nl;
-         st += "Wage: " + this.wage + nl;
-         st += "Regular Pay: " + this.regPay() + nl;
-         st += "OT Pay: " + this.otPay() + nl;
-         st += "Gross Pay: " + this.grossPay();
+         st += "Wage: " + currency.format(this.wage) + nl;
+         st += "Regular Pay: " + currency.format(this.regPay()) + nl;
+         st += "OT Pay: " + currency.format(this.otPay()) + nl;
+         st += "Gross Pay: " + currency.format(this.grossPay()) + nl + nl;
          
          return st;
     }// end toString
