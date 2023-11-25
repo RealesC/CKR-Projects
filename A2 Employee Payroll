@@ -35,7 +35,7 @@ public class A2_Employee_Payroll{
     // ***** objects *****
     
         //Scanner scanner = new Scanner(System.in);
-        //NumberFormat currency = NumberFormat.getCurrencyInstance();
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
         
         // file io buffers for reading and writing to text files
         
@@ -64,9 +64,41 @@ public class A2_Employee_Payroll{
     
     // ***** Main Processing *****
     
+        //use of getters
+        System.out.println("Use of getters:" + nl);
+        System.out.println("Hours for Employee 2 is " + currency.format(Employee2.getHours()));
+        System.out.println("Wage for Employee 4 is " + currency.format(Employee4.getWage()) + nl);
+        
+        //Use of setter
+        System.out.println("Use of setters:" + nl);
+        System.out.println("Wage for Employee 5 is" + currency.format(Employee5.getWage()));
+        
+        //setters for employee 5
+        Employee5.setName("Steven");
+        Employee5.setHours(52);
+        Employee5.setWage(20.4);
+        
+        System.out.println("New Wage for Employee 5 is" + currency.format(Employee5.getWage()) + nl);
+        
+        //use to string
+        System.out.println(Employee1.toString());
+        System.out.println(Employee2.toString());
+        System.out.println(Employee3.toString());
+        System.out.println(Employee4.toString());
+        System.out.println(Employee5.toString());
+        
+        //testing the .equal method
+        System.out.println("Testing the .equal method: Comparing wages" + nl);
+        
+        System.out.println("Employee 1 and Employee 4 are equal: " + Employee1.equal(Employee4));
+        System.out.println("Employee 1 and Employee 3 are equal: " + Employee1.equal(Employee3) + nl);
+        
     
     
     // ***** Print Formatted Output *****
+    
+    
+    
     
     // ***** Closing Message *****
     
