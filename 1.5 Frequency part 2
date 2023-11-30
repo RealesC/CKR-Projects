@@ -123,7 +123,7 @@ public class Frequency_Assignment_Part2 {
     
     //prime the EOF loop
     strin = fin.readLine();
-    System.out.println(strin);
+    //System.out.println(strin);
     
     while(strin != null){
         
